@@ -1,0 +1,1 @@
+export default function SectionTitle({kicker,title,desc}:{kicker:string;title:string;desc?:string}){return <div className="max-w-3xl"><div className="kicker">{kicker}</div><h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight">{title}</h2>{desc&&<p className="mt-5 text-lg text-gray-400 leading-8">{desc}</p>}</div>}

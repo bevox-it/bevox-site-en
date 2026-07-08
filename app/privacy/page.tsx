@@ -1,0 +1,2 @@
+export const metadata = { title: 'Privacy Policy' };
+export default function Privacy(){return <main className="pt-36"><section className="section"><div className="container max-w-3xl"><h1 className="text-5xl font-bold">Privacy Policy</h1><p className="mt-6 text-gray-400 leading-8">Bevox collects only the information needed to respond to inquiries and provide services. We do not sell personal information. Contact us for privacy-related requests.</p></div></section></main>}

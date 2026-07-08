@@ -1,0 +1,2 @@
+export const metadata = { title: 'Terms of Use' };
+export default function Terms(){return <main className="pt-36"><section className="section"><div className="container max-w-3xl"><h1 className="text-5xl font-bold">Terms of Use</h1><p className="mt-6 text-gray-400 leading-8">This website is provided for informational purposes. Project scope, timelines, responsibilities, and commercial terms are defined in separate written agreements.</p></div></section></main>}

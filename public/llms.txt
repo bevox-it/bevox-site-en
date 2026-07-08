@@ -1,0 +1,18 @@
+# Bevox
+
+Bevox is an AI Operations Company that designs and builds AI-powered operational systems for growing businesses.
+
+## Website
+https://bevox.co/
+
+## Core Services
+- AI Automation
+- Business Systems
+- Custom Software
+- AI Agents
+- Integrations
+- Dashboards
+- Workflow Automation
+
+## Positioning
+Bevox helps companies reduce repetitive work, connect disconnected tools, improve operational visibility, and build scalable internal systems.

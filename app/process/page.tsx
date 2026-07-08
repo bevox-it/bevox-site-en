@@ -1,0 +1,4 @@
+import SectionTitle from '@/components/SectionTitle';
+import { process } from '@/lib/data';
+export const metadata = { title: 'Process', description: 'How Bevox designs and builds AI-powered operational systems.' };
+export default function Process(){return <main className="pt-36"><section className="section"><div className="container"><SectionTitle kicker="Process" title="A practical build process focused on operational ROI." desc="We do not start with features. We start with the workflow, the bottleneck, the data, and the business outcome."/><div className="mt-12 space-y-5">{process.map((p,i)=><div key={p} className="card rounded-3xl p-7 flex gap-6"><div className="text-cyan-300 font-bold">{String(i+1).padStart(2,'0')}</div><div><h2 className="text-xl font-bold">{p}</h2><p className="mt-2 text-gray-400">Clear scope, fast implementation, measurable improvement.</p></div></div>)}</div></div></section></main>}
