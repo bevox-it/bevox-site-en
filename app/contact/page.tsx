@@ -1,3 +1,26 @@
 import SectionTitle from '@/components/SectionTitle';
-export const metadata = { title: 'Contact', description: 'Contact Bevox to discuss AI automation, business systems, custom software, and operational workflows.' };
-export default function Contact(){return <main className="pt-36"><section className="section"><div className="container grid lg:grid-cols-2 gap-10"><SectionTitle kicker="Contact" title="Tell us what is still manual." desc="Share the workflow, bottleneck, or system you want to improve. We will suggest the clearest path forward."/><form className="card rounded-3xl p-8 space-y-4"><input className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3" placeholder="Name"/><input className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3" placeholder="Email"/><input className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3" placeholder="Company"/><textarea className="w-full min-h-40 rounded-xl bg-white/5 border border-white/10 px-4 py-3" placeholder="What do you want to automate or build?"/><button type="button" className="btn-primary rounded-xl px-5 py-3 font-semibold">Submit inquiry</button><p className="text-sm text-gray-500">Form is visual-only in this phase. Connect it to Make.com, Resend, or a Next.js API route later.</p></form></div></section></main>}
+import ContactForm from '@/components/ContactForm';
+
+export const metadata = {
+  title: 'Contact',
+  description:
+    'Contact Bevox to discuss AI automation, business systems, custom software, and operational workflows.',
+};
+
+export default function Contact() {
+  return (
+    <main className="pt-36">
+      <section className="section">
+        <div className="container grid lg:grid-cols-2 gap-10">
+          <SectionTitle
+            kicker="Contact"
+            title="Tell us what is still manual."
+            desc="Share the workflow, bottleneck, or system you want to improve. We will suggest the clearest path forward."
+          />
+
+          <ContactForm />
+        </div>
+      </section>
+    </main>
+  );
+}
