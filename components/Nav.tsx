@@ -1,14 +1,50 @@
+'use client';
+
 import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import Brand from '@/components/Brand';
 
 const links = [
-  ['Services', '/services'], ['Industries', '/industries'], ['Process', '/process'], ['About', '/about'], ['Contact', '/contact']
+  ['Services', '/services'],
+  ['Industries', '/industries'],
+  ['Process', '/process'],
+  ['Evolution', '/business-evolution'],
+  ['Locations', '/locations'],
+  ['About', '/about'],
 ];
+
 export default function Nav() {
-  return <header className="fixed top-4 left-0 right-0 z-50">
-    <nav className="container nav-glass rounded-2xl px-4 py-3 flex items-center justify-between">
-      <Link href="/" className="flex items-center gap-3 font-bold tracking-tight"><span className="h-9 w-9 rounded-xl btn-primary grid place-items-center">B</span> Bevox</Link>
-      <div className="hidden md:flex items-center gap-7 text-sm text-gray-300">{links.map(([label,href]) => <Link key={href} href={href} className="hover:text-white">{label}</Link>)}</div>
-      <Link href="/contact" className="btn-primary rounded-xl px-4 py-2 text-sm font-semibold transition">Book a call</Link>
-    </nav>
-  </header>
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  useEffect(() => setOpen(false), [pathname]);
+
+  return (
+    <header className="site-header">
+      <nav className="container nav-glass nav-shell" aria-label="Main navigation">
+        <Brand />
+        <div className="desktop-nav">
+          {links.map(([label, href]) => (
+            <Link key={label} href={href} className={pathname === href ? 'active' : ''}>
+              {label}
+            </Link>
+          ))}
+        </div>
+        <a className="btn-primary nav-cta" href="https://cal.com/bevox/30min" target="_blank" rel="noreferrer">
+          Book a strategy call
+        </a>
+        <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle menu">
+          {open ? <X /> : <Menu />}
+        </button>
+        {open && (
+          <div className="mobile-nav">
+            {links.map(([label, href]) => <Link key={label} href={href}>{label}</Link>)}
+            <Link href="/contact">Contact</Link>
+            <a href="https://cal.com/bevox/30min" target="_blank" rel="noreferrer">Book a strategy call</a>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
 }

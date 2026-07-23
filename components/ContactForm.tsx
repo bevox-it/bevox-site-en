@@ -15,6 +15,7 @@ export default function ContactForm() {
     email: '',
     phone: '',
     message: '',
+    website: '',
   });
 
   const [errors, setErrors] = useState<string[]>([]);
@@ -34,16 +35,19 @@ export default function ContactForm() {
         : 'border-white/10 focus:border-violet-400'
     }`;
 
-  const submitForm = async () => {
+  const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const required = ['name', 'company', 'email', 'message'];
     const missing = required.filter(
       (field) => !form[field as keyof typeof form].trim()
     );
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) missing.push('email');
 
     if (missing.length) {
-      setErrors(missing);
+      setErrors([...new Set(missing)]);
       return;
     }
+    if (form.website) return;
 
     setIsSubmitting(true);
 
@@ -53,7 +57,14 @@ export default function ContactForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          phone: form.phone,
+          message: form.message,
+          source: 'bevox.co',
+        }),
       });
 
       if (!response.ok) {
@@ -69,8 +80,15 @@ export default function ContactForm() {
   };
 
   return (
-    <form className="card rounded-3xl p-8 space-y-4" noValidate>
+    <form className="card rounded-3xl p-8 space-y-4" noValidate onSubmit={submitForm}>
+      <div className="sr-only" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input id="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => updateField('website', e.target.value)} />
+      </div>
       <input
+        name="name"
+        aria-label="Name"
+        aria-invalid={hasError('name')}
         className={inputClass('name')}
         placeholder="Name"
         value={form.name}
@@ -78,6 +96,9 @@ export default function ContactForm() {
       />
 
       <input
+        name="company"
+        aria-label="Company"
+        aria-invalid={hasError('company')}
         className={inputClass('company')}
         placeholder="Company"
         value={form.company}
@@ -85,6 +106,10 @@ export default function ContactForm() {
       />
 
       <input
+        name="email"
+        type="email"
+        aria-label="Email"
+        aria-invalid={hasError('email')}
         className={inputClass('email')}
         placeholder="Email"
         value={form.email}
@@ -92,6 +117,9 @@ export default function ContactForm() {
       />
 
       <input
+        name="phone"
+        type="tel"
+        aria-label="Phone"
         className={inputClass('phone')}
         placeholder="Phone"
         value={form.phone}
@@ -99,15 +127,18 @@ export default function ContactForm() {
       />
 
       <textarea
+        name="message"
+        aria-label="Project details"
+        aria-invalid={hasError('message')}
         className={`${inputClass('message')} min-h-40`}
         placeholder="What do you want to automate or build?"
         value={form.message}
         onChange={(e) => updateField('message', e.target.value)}
       />
 
-      {errors.length > 0 && (
+      {errors.some(error => error !== 'submit') && (
         <p className="text-sm text-violet-300">
-          Please fill in the required fields.
+          Please complete the required fields and enter a valid email.
         </p>
       )}
 
@@ -118,8 +149,7 @@ export default function ContactForm() {
       )}
 
       <button
-        type="button"
-        onClick={submitForm}
+        type="submit"
         disabled={isSubmitting}
         className="btn-primary rounded-xl px-5 py-3 font-semibold disabled:opacity-60"
       >
