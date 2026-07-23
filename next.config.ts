@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   output: 'standalone',
   poweredByHeader: false,
   async redirects() {
-    const pages = ['business-evolution','services','solutions','industries','work','process','process-map','roi-calculator','about','locations','contact','privacy','terms','thank-you'];
+    const pages = ['business-evolution','services','solutions','industries','work','evolution-hub','process','process-map','roi-calculator','about','locations','contact','privacy','terms','thank-you'];
     return [
       ...pages.flatMap(path => ([
       { source: `/${path}.html`, destination: `/${path}`, permanent: true },

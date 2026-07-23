@@ -20,6 +20,6 @@ export default function BusinessEvolution(){
     <h2>How evolution starts</h2>
     <p>We begin with one important process. We map the current work, quantify friction, design the improved system, and build the smallest version that can prove value. From there, the system expands around verified needs.</p>
     <a className="btn-primary button" href="https://cal.com/bevox/30min" target="_blank" rel="noreferrer">Discuss your next evolution <ArrowRight size={18}/></a>
-    <Link className="btn-secondary button" href="/services" style={{marginLeft:12}}>Explore services</Link>
+    <Link className="btn-secondary button" href="/business-evolution/framework" style={{marginLeft:12}}>Explore the framework</Link>
   </div></section></main>;
 }

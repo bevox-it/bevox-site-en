@@ -26,6 +26,7 @@ export default function WorkPage({page}:{page:Work}){
       <div className="case-results">{page.outcomes.map(x=><div key={x}><Check/><span>{x}</span></div>)}</div>
     </div></section>
     <section className="section compact-section subtle-section"><div className="container"><span className="kicker">Product scope</span><h2>Designed as one coherent experience.</h2><div className="scope-grid">{page.capabilities.map((x,i)=><article key={x}>{i===0?<Gauge/>:i===1?<Network/>:i===2?<BarChart3/>:<CalendarDays/>}<span>0{i+1}</span><h3>{x}</h3></article>)}</div></div></section>
+    <section className="authority-bridge"><div className="container"><div><span className="kicker">From work to method</span><h2>Explore how connected operations are designed.</h2></div><div className="authority-links"><Link href="/evolution-hub/from-fragmented-tools-to-connected-operations">Read the field note <ArrowRight size={15}/></Link><Link href="/business-evolution/framework">See the framework <ArrowRight size={15}/></Link></div></div></section>
     <section className="section"><div className="container proof-panel"><div><span className="kicker">See it in context</span><h2>Get the walkthrough, architecture, and product presentation.</h2></div><div className="cta-actions"><a className="button btn-primary" href="https://cal.com/bevox/30min" target="_blank" rel="noreferrer">Request a demo</a><Link className="button btn-secondary" href="/contact">Request presentation</Link></div></div></section>
   </main>
 }

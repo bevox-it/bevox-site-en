@@ -2,9 +2,9 @@ import Link from 'next/link';
 import Brand from '@/components/Brand';
 
 const groups = [
-  { title: 'Explore', links: [['Services','/services'],['Solutions','/solutions'],['Industries','/industries'],['Work','/work']] },
+  { title: 'Explore', links: [['Services','/services'],['Solutions','/solutions'],['Industries','/industries'],['Work','/work'],['Evolution Hub','/evolution-hub']] },
   { title: 'Bevox', links: [['Business Evolution X','/business-evolution'],['Process','/process'],['About','/about'],['Locations','/locations'],['Contact','/contact']] },
-  { title: 'Tools', links: [['ROI Calculator','/roi-calculator'],['Process Map','/process-map'],['Privacy','/privacy'],['Terms','/terms']] },
+  { title: 'Tools', links: [['Business Evolution Framework','/business-evolution/framework'],['ROI Calculator','/roi-calculator'],['Process Map','/process-map'],['Privacy','/privacy'],['Terms','/terms']] },
 ];
 
 export default function Footer(){

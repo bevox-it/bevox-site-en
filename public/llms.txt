@@ -1,9 +1,14 @@
 # Bevox
 
-Bevox is an AI Operations Company that designs and builds AI-powered operational systems for growing businesses.
+Bevox is Business Evolution X: a company that designs and builds digital systems, connected operations, AI automation, and custom software.
 
 ## Website
 https://bevox.co/
+
+## Authority
+- Business Evolution Framework: https://bevox.co/business-evolution/framework
+- Evolution Hub: https://bevox.co/evolution-hub
+- Work: https://bevox.co/work
 
 ## Core Services
 - AI Automation

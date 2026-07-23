@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Brand from '@/components/Brand';
 
 const links = [
@@ -11,18 +11,34 @@ const links = [
   ['Solutions', '/solutions'],
   ['Industries', '/industries'],
   ['Work', '/work'],
+  ['Evolution Hub', '/evolution-hub'],
   ['Process', '/process'],
-  ['About', '/about'],
 ];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
   useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const closeOutside = (event: PointerEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) setOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('pointerdown', closeOutside);
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.removeEventListener('pointerdown', closeOutside);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [open]);
 
   return (
     <header className="site-header">
-      <nav className="container nav-glass nav-shell" aria-label="Main navigation">
+      <nav ref={navRef} className="container nav-glass nav-shell" aria-label="Main navigation">
         <Brand />
         <div className="desktop-nav">
           {links.map(([label, href]) => (

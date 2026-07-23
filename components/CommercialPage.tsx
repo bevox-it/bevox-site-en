@@ -22,5 +22,6 @@ export default function CommercialPage({page}:Props){
     <section className="section"><div className="container"><div className="proof-panel"><div><span className="kicker">Bevox principle</span><h2>{page.proof}</h2></div><strong>{page.metric}</strong></div>
       <div className="related-links">{page.related.map(h=><Link key={h} href={h}>{labels[h] || h.split('/').pop()?.replaceAll('-',' ')} <ArrowRight size={15}/></Link>)}</div>
     </div></section>
+    <section className="authority-bridge"><div className="container"><div><span className="kicker">Go deeper</span><h2>See the thinking behind the system.</h2></div><div className="authority-links"><Link href="/business-evolution/framework">Business Evolution Framework <ArrowRight size={15}/></Link><Link href="/evolution-hub">Explore Evolution Hub <ArrowRight size={15}/></Link></div></div></section>
   </main>
 }

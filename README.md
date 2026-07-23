@@ -2,9 +2,10 @@
 
 Static-first Next.js 16 + Tailwind CSS v4 project for Vercel.
 
-Phase 2 adds 15 service pages, 10 solution pages, 10 industry pages, 6 work
-pages, expanded Process and About stories, an interactive ROI Calculator, and
-an interactive Process Map.
+Phase 3 adds the Evolution Hub, eight cornerstone insights, the proprietary
+Business Evolution Framework, article structured data, contextual internal
+links, and the refined Work portfolio from Phase 2. Mobile navigation closes
+on route change, Escape, or a tap outside the menu.
 
 ## Run locally
 

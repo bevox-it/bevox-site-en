@@ -80,6 +80,16 @@ export default function Home(){
         <Link className="btn-secondary button" href="/locations">Explore locations <ArrowRight size={18}/></Link>
       </div></section>
 
+      <section className="section authority-home"><div className="container">
+        <SectionTitle kicker="Evolution Hub" title="Original thinking for the next operating model." desc="Frameworks, practical playbooks, systems, and field notes—not generic content written for search engines."/>
+        <div className="authority-home-grid">
+          <Link href="/business-evolution/framework"><span>Framework</span><h3>The Business Evolution Framework</h3><p>Five movements from diagnosis to compounding operational advantage.</p><ArrowRight/></Link>
+          <Link href="/evolution-hub/what-should-a-business-automate-first"><span>Playbook</span><h3>What should a business automate first?</h3><p>A scoring method for choosing the right first workflow.</p><ArrowRight/></Link>
+          <Link href="/evolution-hub/ai-agents-vs-workflow-automation"><span>Insight</span><h3>AI agents vs workflow automation</h3><p>Where each approach wins—and why strong systems use both.</p><ArrowRight/></Link>
+        </div>
+        <Link className="text-link" href="/evolution-hub">Explore the Evolution Hub <ArrowRight size={17}/></Link>
+      </div></section>
+
       <section className="section"><div className="container">
         <SectionTitle kicker="Clear answers" title="Business evolution, without the buzzwords."/>
         <div className="faq-list">{faq.map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div>
