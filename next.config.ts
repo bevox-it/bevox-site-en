@@ -5,10 +5,21 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   async redirects() {
     const pages = ['business-evolution','services','solutions','industries','work','process','process-map','roi-calculator','about','locations','contact','privacy','terms','thank-you'];
-    return pages.flatMap(path => ([
+    return [
+      ...pages.flatMap(path => ([
       { source: `/${path}.html`, destination: `/${path}`, permanent: true },
       { source: `/${path}.htm`, destination: `/${path}`, permanent: true },
-    ]));
+      ])),
+      { source: '/work/komandni-centar', destination: '/work/command-center', permanent: true },
+      { source: '/work/workz-ai', destination: '/work/workz', permanent: true },
+      { source: '/work/alba-dominante', destination: '/work', permanent: true },
+      { source: '/locations/serbia', destination: '/locations/europe', permanent: true },
+      { source: '/locations/austria', destination: '/locations/europe', permanent: true },
+      { source: '/locations/germany', destination: '/locations/europe', permanent: true },
+      { source: '/locations/hungary', destination: '/locations/europe', permanent: true },
+      { source: '/locations/bulgaria', destination: '/locations/europe', permanent: true },
+      { source: '/locations/malta', destination: '/locations/europe', permanent: true },
+    ];
   },
   async headers() {
     return [{

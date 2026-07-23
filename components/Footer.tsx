@@ -14,7 +14,7 @@ export default function Footer(){
         <div>
           <Brand />
           <p className="footer-intro">We design and build the systems behind business evolution — digital, operational, AI-powered, and connected.</p>
-          <p className="footer-markets">USA · Serbia · Austria · Germany · Hungary · Bulgaria · Malta</p>
+          <p className="footer-markets">USA · Europe · Middle East · Australia</p>
         </div>
         {groups.map(group => (
           <div key={group.title} className="footer-group">

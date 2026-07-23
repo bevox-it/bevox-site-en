@@ -17,7 +17,7 @@ export default function Brand({ compact = false }: { compact?: boolean }) {
       <CubeMark />
       {!compact && (
         <span className="brand-copy">
-          <strong>Bevox</strong>
+          <strong>BEVOX</strong>
           <small>Business Evolution X</small>
         </span>
       )}

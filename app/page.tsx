@@ -21,7 +21,7 @@ const faq = [
   ['What does Business Evolution X mean?', 'It is our model for improving the whole operating environment of a company. X stands for what comes next: transformation, intelligence, connection, acceleration, and scale.'],
   ['Do you start with AI?', 'No. We start with the business process and the outcome. AI is used only when it is the strongest practical tool for the job.'],
   ['Can Bevox improve an existing system?', 'Yes. We can connect, modernize, automate, or selectively replace existing tools without forcing a complete rebuild.'],
-  ['Where does Bevox work?', 'We work with companies across the United States and Europe, with focus markets in Serbia, Austria, Germany, Hungary, Bulgaria, and Malta.'],
+  ['Where does Bevox work?', 'We serve companies across the USA, Europe, the Middle East, and Australia. Our distributed team is based across eight countries and includes native English, German, Italian, and Spanish speakers.'],
 ];
 
 export default function Home(){
@@ -76,7 +76,7 @@ export default function Home(){
       </div></section>
 
       <section className="section"><div className="container location-callout">
-        <div><div className="kicker">Where we work</div><h2>Built in Europe. Working across borders.</h2><p>Serving companies across the USA, Serbia, Austria, Germany, Hungary, Bulgaria, and Malta.</p></div>
+        <div><div className="kicker">Where we work</div><h2>Built in Europe. Working across borders.</h2><p>Serving companies across the USA, Europe, the Middle East, and Australia—with a distributed team across eight countries.</p></div>
         <Link className="btn-secondary button" href="/locations">Explore locations <ArrowRight size={18}/></Link>
       </div></section>
 

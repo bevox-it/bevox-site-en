@@ -37,7 +37,7 @@ const organization = {
   url: 'https://bevox.co',
   logo: 'https://bevox.co/icon.svg',
   slogan: 'Digital. Operational. AI-powered. Complete.',
-  areaServed: ['United States','Serbia','Austria','Germany','Hungary','Bulgaria','Malta'],
+  areaServed: ['United States','Europe','Middle East','Australia'],
   knowsAbout: ['AI automation','Business process automation','Custom software development','Internal business systems','Digital transformation'],
 };
 
