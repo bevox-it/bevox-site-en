@@ -1,0 +1,3 @@
+import RoiCalculator from '@/components/RoiCalculator';
+export const metadata={title:'Automation ROI Calculator',description:'Estimate the directional cost of manual work, potential annual savings, payback period, and first-year automation ROI.'};
+export default function Page(){return <main className="tool-page"><section className="listing-hero"><div className="grid-bg"/><div className="container"><span className="kicker">Evolution Tool · ROI Calculator</span><h1>Make the cost of manual work visible.</h1><p>Model a recurring workflow and estimate the directional value of reducing repetitive work.</p></div></section><section className="section"><div className="container"><RoiCalculator/></div></section></main>}

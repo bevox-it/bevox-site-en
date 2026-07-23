@@ -8,10 +8,10 @@ import Brand from '@/components/Brand';
 
 const links = [
   ['Services', '/services'],
+  ['Solutions', '/solutions'],
   ['Industries', '/industries'],
+  ['Work', '/work'],
   ['Process', '/process'],
-  ['Evolution', '/business-evolution'],
-  ['Locations', '/locations'],
   ['About', '/about'],
 ];
 
@@ -26,7 +26,7 @@ export default function Nav() {
         <Brand />
         <div className="desktop-nav">
           {links.map(([label, href]) => (
-            <Link key={label} href={href} className={pathname === href ? 'active' : ''}>
+            <Link key={label} href={href} className={pathname === href || pathname.startsWith(`${href}/`) ? 'active' : ''}>
               {label}
             </Link>
           ))}

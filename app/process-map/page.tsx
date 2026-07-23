@@ -1,0 +1,3 @@
+import ProcessMapper from '@/components/ProcessMapper';
+export const metadata={title:'Business Process Map',description:'Map a business workflow from trigger to output and assess its directional automation opportunity.'};
+export default function Page(){return <main className="tool-page"><section className="listing-hero"><div className="grid-bg"/><div className="container"><span className="kicker">Evolution Tool · Process Map</span><h1>See the workflow before changing it.</h1><p>Capture the trigger, input, work, decision, and output. Then quantify the repetition and friction.</p></div></section><section className="section"><div className="container"><ProcessMapper/></div></section></main>}

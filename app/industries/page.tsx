@@ -1,4 +1,4 @@
-import SectionTitle from '@/components/SectionTitle';
-import { industries } from '@/lib/data';
-export const metadata = { title: 'Industries', description: 'AI operations systems for construction, healthcare, manufacturing, accounting, logistics, and professional services.' };
-export default function Industries(){return <main className="pt-36"><section className="section"><div className="container"><SectionTitle kicker="Industries" title="Operational systems for process-heavy companies." desc="Bevox is strongest where companies have recurring workflows, paperwork, approvals, field teams, client communication, and reporting obligations."/><div className="mt-12 grid md:grid-cols-3 gap-6">{industries.map(i=><article key={i} className="card rounded-3xl p-8"><h2 className="text-2xl font-bold">{i}</h2><p className="mt-4 text-gray-400 leading-8">We identify repetitive work, automate coordination, connect existing tools, and create dashboards for managers.</p></article>)}</div></div></section></main>}
+import ListingPage from '@/components/ListingPage';
+import { industryPages } from '@/lib/commercial';
+export const metadata={title:'Industries',description:'Connected systems and AI-powered operations for process-heavy industries.'};
+export default function Page(){return <ListingPage kicker="Industries" title="Built for the reality of the operation." desc="We work best where recurring processes, documents, decisions, teams, and data must move together." items={industryPages.map(x=>({slug:x.slug,title:x.title,desc:x.intro}))}/>}
